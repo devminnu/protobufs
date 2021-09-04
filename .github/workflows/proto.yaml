@@ -14,5 +14,5 @@ jobs:
         run: echo "generating stubs"
       - name: run
         run: |
-            sudo apt install -y protobuf-compiler && \
+            sudo apt install -y protobuf-compiler && ls -la && \
             make grpc
