@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: uses
-        uses: "github.com/devminnu/protobufs@master"
+        uses: "devminnu/protobufs@master"
         with:
           test: test
       - name: gensss
