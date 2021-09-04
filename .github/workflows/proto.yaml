@@ -23,7 +23,7 @@ jobs:
       - name: ll1
         run: ls -la
       - name: ll2
-        run: cd .. && ls -la && ls /home/runner/go
+        run: cd .. && ls -la && ls /home/runner
       - name: set path
         run:  export PATH="$PATH:$(go env GOPATH)/bin" && export PATH="$PATH:$HOME/.local/bin"
       - name: gensss
