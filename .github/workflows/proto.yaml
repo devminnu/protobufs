@@ -15,7 +15,4 @@ jobs:
       - name: run
         run: |
             sudo apt install -y protobuf-compiler && \
-            protoc --go_out=. --go-grpc_out=. \
-            --go_opt=paths=import  \
-            --govalidators_out=. \
-            --go-grpc_opt=paths=import ecommerce/*/*
+            make grpc
