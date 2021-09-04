@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: uses
       - uses: devminnu/protobufs
+        with:
+          test: test
       - name: gensss
         run: protoc -I=. --go_out=. ./...
 
