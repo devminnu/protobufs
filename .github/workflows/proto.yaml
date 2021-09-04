@@ -12,24 +12,6 @@ jobs:
     steps:
       - name: uses
       - uses: devminnu/protobufs
-      # - name: generating stubs
-      #   run: echo "generating stubs"
-      # - name: run
-      #   run: |
-      #       git submodule foreach git checkout main && \
-      #       git submodule foreach git pull origin main && \
-      #       go env -w GO111MODULE=on && \
-      #       sudo apt install -y protobuf-compiler && \
-      #       go get google.golang.org/protobuf/cmd/protoc-gen-go@v1.26 && \
-      #       go get google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.1
-      # - name: ll
-      #   run: go env && pwd
-      # - name: ll1
-      #   run: ls -la
-      # - name: ll2
-      #   run: cd .. && ls -la && ls /home/runner
-      # - name: set path
-      #   run:  export PATH="$PATH:$(go env GOPATH)/bin" && export PATH="$PATH:$HOME/.local/bin"
       - name: gensss
-        run: protoc -I=. --go_out=. .
+        run: protoc -I=. --go_out=. ./...
 
