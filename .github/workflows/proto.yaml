@@ -22,5 +22,5 @@ jobs:
       - name: set path
         run:  export PATH="$PATH:$(go env GOPATH)/bin"
       - name: gensss
-        run: protoc -I=. --go_out=. ./...
+        run: protoc -I=. --go_out=. .
 
