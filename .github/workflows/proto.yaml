@@ -14,6 +14,6 @@ jobs:
         uses: devminnu/protobufs
         with:
           test: test
-      # - name: gensss
+      - name: gensss
         run: protoc -I=. --go_out=. ./...
 
