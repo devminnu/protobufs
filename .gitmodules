@@ -1,0 +1,3 @@
+[submodule "ecommerce"]
+	path = ecommerce
+	url = git@github.com:devminnu/ecommerce.git
