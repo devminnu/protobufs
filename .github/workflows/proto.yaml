@@ -29,6 +29,6 @@ jobs:
       #   run: cd .. && ls -la && ls /home/runner
       # - name: set path
       #   run:  export PATH="$PATH:$(go env GOPATH)/bin" && export PATH="$PATH:$HOME/.local/bin"
-      # - name: gensss
-      #   run: protoc -I=. --go_out=. .
+      - name: gensss
+        run: protoc -I=. --go_out=. .
 
