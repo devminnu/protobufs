@@ -20,6 +20,10 @@ jobs:
             go get google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.1
       - name: ll
         run: go env && pwd
+      - name: ll1
+        run: ls -la
+      - name: ll2
+        run: cd .. && ls -la
       - name: set path
         run:  export PATH="$PATH:$(go env GOPATH)/bin" && export PATH="$PATH:$HOME/.local/bin"
       - name: gensss
