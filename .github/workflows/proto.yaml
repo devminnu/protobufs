@@ -10,6 +10,7 @@ jobs:
   generate-stubs:
     runs-on: ubuntu-latest
     steps:
+      - name: uses
       - uses: devminnu/protobufs
       # - name: generating stubs
       #   run: echo "generating stubs"
