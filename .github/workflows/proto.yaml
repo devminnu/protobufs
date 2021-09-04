@@ -18,10 +18,9 @@ jobs:
             go env -w GO111MODULE=on && \
             sudo apt install -y protobuf-compiler && \
             go get google.golang.org/protobuf/cmd/protoc-gen-go@v1.26 && \
-            go get google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.1 && \
+            go get google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.1
       - name: set path
         run:  export PATH="$PATH:$(go env GOPATH)/bin"
       - name: gensss
-        run: |      
-            protoc -I=. --go_out=. ./...
+        run: protoc -I=. --go_out=. ./...
 
