@@ -19,10 +19,9 @@ jobs:
             sudo apt install -y protobuf-compiler && \
             go get google.golang.org/protobuf/cmd/protoc-gen-go@v1.26 && \
             go get google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.1 && \
-            export PATH="$PATH:$(go env GOPATH)/bin"
+      - name: set path
+        run:  export PATH="$PATH:$(go env GOPATH)/bin"
       - name: gensss
         run: |      
-            protoc --go_out=. --go-grpc_out=. \
-            --go_opt=paths=import  \
-            --govalidators_out=. \
-            --go-grpc_opt=paths=import .
+            protoc -I=. --go_out=. ./...
+
