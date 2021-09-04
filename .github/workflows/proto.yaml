@@ -14,6 +14,7 @@ jobs:
         run: echo "generating stubs"
       - name: run
         run: |
+            apt install -y protobuf-compiler && \
             protoc --go_out=. --go-grpc_out=. \
             --go_opt=paths=import  \
             --govalidators_out=. \
