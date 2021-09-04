@@ -19,6 +19,8 @@ jobs:
             sudo apt install -y protobuf-compiler && \
             go get google.golang.org/protobuf/cmd/protoc-gen-go@v1.26 && \
             go get google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.1
+      - name: ll
+        run: go env
       - name: set path
         run:  export PATH="$PATH:$(go env GOPATH)/bin" && export PATH="$PATH:$HOME/.local/bin"
       - name: gensss
