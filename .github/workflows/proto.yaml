@@ -11,7 +11,7 @@ jobs:
         uses: reviewdog/action-misspell@v1.6.0
         with:
           reporter: github-pr-check
-          github_token: ${{ secrets.github_token }}
+          github_token: ${{ secrets.token }}
           locale: "US"
           exclude: |
             "*.js"
