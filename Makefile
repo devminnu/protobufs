@@ -3,7 +3,10 @@ update-submodules:
 	git submodule foreach git pull origin main
 
 grpc:
-	protoc --go_out=. --go-grpc_out=. \
-	--go_opt=paths=import  \
-	--govalidators_out=. \
-	--go-grpc_opt=paths=import ./...
+	protoc \
+	--proto_path=ecommerce \
+	--go_out=$(arg) \
+	--go_opt=paths=source_relative  \
+	--go-grpc_out=$(arg) \
+	--go-grpc_opt=paths=source_relative \
+	ecommerce/*/*.proto

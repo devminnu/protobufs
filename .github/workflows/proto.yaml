@@ -1,19 +1,36 @@
-name: Go
+# name: Go
 
-on:
-  push:
-  #   branches: [ $default-branch ]
-  # pull_request:
-  #   branches: [ $default-branch ]
+# on:
+#   push:
+#   #   branches: [ $default-branch ]
+#   # pull_request:
+#   #   branches: [ $default-branch ]
 
+# jobs:
+#   generate-stubs:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: uses
+#         uses: "devminnu/protobufs@main"
+#         with:
+#           test: test
+#       - name: gensss
+#         run: protoc -I=. --go_out=. ./...
+
+
+name: reviewdog
+on: [pull_request]
 jobs:
-  generate-stubs:
+  misspell:
+    name: runner / misspell
     runs-on: ubuntu-latest
     steps:
-      - name: uses
-        uses: "devminnu/protobufs@main"
+      - name: Check out code.
+        uses: actions/checkout@v1
+      - name: misspell
+        uses: reviewdog/action-misspell@v1
         with:
-          test: test
-      - name: gensss
-        run: protoc -I=. --go_out=. ./...
-
+          github_token: ${{ secrets.github_token }}
+          locale: "US"
+          exclude: |
+            "*.json"
