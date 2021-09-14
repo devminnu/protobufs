@@ -19,7 +19,7 @@
 
 
 name: reviewdog
-on: [pull_request]
+on: [push]
 jobs:
   misspell:
     name: runner / misspell
